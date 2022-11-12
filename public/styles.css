@@ -1,0 +1,32 @@
+.main-para {
+    padding: 4rem 12rem;
+    font-size: 1.2rem;
+    font-family: 'Baloo Tammudu 2', cursive;
+    color: #40514E;
+    
+}
+
+.main-image{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+  text-align: center;
+  margin: 7rem 5rem;
+  padding: auto;
+}
+
+
+.main-image:hover{
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8); */
+        transform: scale(1.1);
+}
+
+.footer-icons {
+    margin: 20px 10px;
+}
+.white-section {
+  background-color: #EFF5F5;
+}
+.container-fluid.lastdiv {
+  padding: 7% 15%;
+}

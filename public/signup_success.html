@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ACID Properties in DBMS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="styles.css" rel="stylesheet">
+  
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+
+    </head>
+
+
+<body >
+
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top nav-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ACID Properties in DBMS </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse text-right" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="signup_success.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Login / Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  
+
+    <!-- Starting main div -->
+    <div align = "center">
+        <img src="images/dbms.jpg" class='main-image'>
+    </div>
+   
+      
+<!-- starting div -->
+        <div class="main-para">
+In this article , we are going to discuss about ACID properties of a DBMS system . But before exploring
+,ACID properties , first let us have a basic insight about DBMS . <br><br>
+
+    DBMS is an acronym for Database Management System , which is a software which helps in management of a database.
+    A database refers to an organized collection of any structured data stored electronically in 
+    an electronic system , while Managament refers to handling resources of any organisation or system.
+
+</div>
+
+
+<div class="main-para ACID">
+<dl>
+    <dt>TRANSACTION</dt>
+    <dd>A transaction refers to a single logical unit of work or query that makes any changes in
+        the database or the database content . Since there are changes being done in the database , 
+        to maintain the consisteny and dataflow , there are some properties which are needed to be
+        taken care of. Such properties are called ACID properties.<br><br>
+    </dd>
+
+<div align = "center">
+    <img src="images/acid.png" class='main-image'>
+</div>
+
+<dt>ATOMICITY</dt>
+    <dd>The concept of atomicity refers to how atomic the data remains.
+         It means that if any operation is performed on the data, it 
+         should be done totally, partially, or not at all. It also implies 
+         that the process shouldn't stop midway through or only partially
+          complete. When performing actions on a transaction, 
+        the operation should be carried out whole, not only partially.<br><br>
+
+        For example , assume that person A sends $10 from his account which has $30 in his account , 
+        to a person B with already having $100 in his account . Now inside all this transaction , two 
+        processes are taking place. Firstly , 10$ will be deducted from account of person A , and same 
+        will be credited in account B . But in case account B is unable to gain $10 but it is deducted
+        from account A , the transaction would be considered as partial . <br>
+        <div align="center">
+            <img src="images/atomicity.png" class="main-image" >
+        </div>
+
+        But if both of the operations happen neatly the transaction will be said to be atomic. 
+        <div align="center">
+            <img src="images/atomicity2.png" class="main-image" >
+        </div>
+    </dd>
+
+    <dt>CONSISTENCY</dt>
+    <dd>Consistency means that the value should always be maintained. 
+        In DBMS, the integrity of the data must be upheld,
+         which calls for any changes to the database to always
+          be retained. Data integrity is crucial in transactions 
+          because it ensures that the database is consistent 
+          both before and after the transaction. 
+        The information should always be accurate.<br><br>
+
+        For example , assume there are three accounts A , B and C . A
+        is making  a transaction to both B and C . Now A gives account B 
+        50$ so its balance becomes 250$ after deduction of 50$ and B's 
+        balance increases by 50$. Now , A sends 20$ to account C , and its balance is 
+        now shown as 230$ (after deduction of 20$) and C's balance increases by 20$. 
+        So overall ,  we can say that this whole series of transactions was consistent
+        because there was no malfunctioning sduring the whole transaction. So the data is consistent.
+
+        <div align="center">
+            <img src="images/consistency.png" class="main-image" >
+        </div>
+    </dd>
+
+    <dt>ISOLATION</dt>
+    <dd>Isolation is another word for separation. 
+        Isolation in DBMS refers to a database's 
+        ability to operate concurrently while ensuring 
+        that no data should impact the other. In other 
+        words, when an operation on one database is
+         finished, an operation on another database 
+         should start. It implies that two operations
+         on two different databases may not have an impact
+          on one another's value. The consistency should be
+           upheld when two or more transactions take place at
+            once in the case of transactions. Other transactions
+             won't notice any modifications made during a specific transaction until 
+        the change has been committed to memory.<br><br>
+
+        For example , The value of both accounts shouldn't
+         change if two activities are being executed simultaneously
+          on two different accounts. The value should be maintained. 
+          As seen in the diagram below, 
+          account A is making T1 and T2 transactions 
+          to accounts B and C, but each are carrying them 
+          out separately and without interfering with one another.
+         It is referred to as isolation.
+
+         <div align="center">
+            <img src="images/isolation.png" class="main-image" >
+        </div>
+    </dd>
+
+    <dt>DURABILITY</dt>
+    <dd>Something is permanent if it is durable.
+        Durability in DBMS refers to the guarantee that data remains 
+        in the database permanently once an operation has been successfully
+         completed. Data should be so perfectly durable that it can still
+          function even in the event of a system failure or crash. However, 
+          if it disappears, the recovery manager is now in charge of making 
+           sure the database is durable. Every time we make changes, 
+        we must use the COMMIT command to commit the settings.<br><br>
+
+      
+    </dd>
+
+</dl>
+</div>
+<footer class="white-section" id="footer">
+    <div class="container-fluid lastdiv" align="center"> <i class="footer-icons fab fa-twitter">
+        </i>
+        <i class="footer-icons fab fa-facebook"></i>
+        <i class="footer-icons fab fa-instagram"></i>
+
+        <p class="footer-copyright">© Copyright 2022</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+
+</body>
+</html>
